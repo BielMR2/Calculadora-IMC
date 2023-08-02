@@ -8,13 +8,13 @@ const patients = [
     {
         name: "Ana",
         age: 24,
-        weight: 80,
+        weight: 160,
         height: 165,
     },
     {
         name: "Antônio",
         age: 60,
-        weight: 80,
+        weight: 800,
         height:170,
     }
 ]
@@ -28,30 +28,22 @@ function calculatorIMC() {
         
         let classificationIMC = ""
 
-        switch (imc) {
-            case imc <= 18,5:
-                classificationIMC = "abaixo do peso"
-                break
-            case imc < 25:
-                classificationIMC = "peso idedal"
-                break
-            case imc < 30:
-                classificationIMC = "levemente acima do peso"
-                break 
-            case imc < 35:
-                classificationIMC = "obesidade grau I"
-                break
-            case imc < 40:
-                classificationIMC = "obesidade grau II"
-                break
-            case imc >= 40 :
-                classificationIMC = "obesidade grau III"
-                break
-            default:
-                break
+        if(imc <= 18.5) {
+            classificationIMC = "abaixo do peso"
+        }else if (imc < 25) {
+            classificationIMC = "peso idedal"
+        }else if (imc < 30) {
+            classificationIMC = "levemente acima do peso"
+        }else if(imc < 35) {
+            classificationIMC = "obesidade grau I"
+        }else if(imc < 40) {
+            classificationIMC = "obesidade grau II"
+        }else if(imc >= 40) {
+            classificationIMC = "obesidade grau III"      
+        }else {
         }
 
-        console.log(classificationIMC)
+
         console.log(`Paciente ${Element.name} possui o IMC de: ${imc}, 
         ele está em uma classificação de: ${classificationIMC}`)
          
